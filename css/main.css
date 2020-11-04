@@ -37,3 +37,12 @@ a{
     background: #4f666a;
     color: #FFFF00;
 }
+
+.box{
+    padding: 15px 10px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 12%;
+    border: 10px solid #000;
+    border-radius: 30px;
+}

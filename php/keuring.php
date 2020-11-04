@@ -6,10 +6,9 @@
     <body>
         <h1 class="logo">Over de Rhein</h1>  
         <div class="topnav">
-            <a href="index.php" class="navtext active">home</a>
+            <a href="index.php" class="navtext">home</a>
             <a href="test.php" class="navtext">kabel test</a>
             <a href="gegevens.php" class="navtext">hijskraan gegevens</a>
-            <a href="keuring.php" class="navtext">hijskraan keuring</a>
-            <a href="login.php" class="navtext">uitlog</a>
+            <a href="keuring.php" class="navtext active">hijskraan keuring</a>
         </div>
     </body>
