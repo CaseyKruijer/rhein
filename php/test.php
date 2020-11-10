@@ -18,6 +18,10 @@
                 <label for="draadbreuk">zichtbare draadbreuk</label>
                     <input type="text" name="draadbreuk">
                 </p>
+                <p>
+                <label for="draadbreuk">zichtbare draadbreuk</label>
+                    <input type="text" name="draadbreuk2">
+                </p>
                 <input type="submit" value="Submit">
             </form>
         </div>
