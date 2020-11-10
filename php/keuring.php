@@ -1,4 +1,5 @@
-<doctype>
+<!DOCTYPE html>
+<html>
     <head>
         <meta name="viewport"content="eidth=device-witdth, initial-scale=1-0">
         <link rel="stylesheet" href="../css/main.css">
@@ -12,3 +13,4 @@
             <a href="keuring.php" class="navtext active">hijskraan keuring</a>
         </div>
     </body>
+</html>
