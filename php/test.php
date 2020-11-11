@@ -22,6 +22,54 @@
                 <label for="draadbreuk">zichtbare draadbreuk</label>
                     <input type="text" name="draadbreuk2">
                 </p>
+                <p>
+                <label for="buitendrade">afslijping van de aan de buitenzijde gelegen draden</label>
+                    <input type="text" name="buitendrade">
+                </p>
+                <p>
+                <label for="buitendrade">roest en corrosie</label>
+                    <input type="text" name="roest">
+                </p>
+                <p>
+                <label for="buitendrade">vermindering kabeldiameter</label>
+                    <input type="text" name="kabelvermindring">
+                </p>
+                <p>
+                <label for="buitendrade">positie van de meetpunten</label>
+                    <input type="text" name="meetpunt">
+                </p>
+                <p>
+                <label for="buitendrade">totale beoordeling</label>
+                    <input type="text" name="totaal">
+                </p>
+                <p>
+                <label for="buitendrade">beschadeging en vervorming</label>
+                    <input type="text" name="vervorming">
+                </p>
+                <p>
+                <label for="buitendrade">datum</label>
+                    <input type="text" name="datum">
+                </p>
+                <p>
+                <label for="buitendrade">kabel levrancier</label>
+                    <input type="text" name="levrancier">
+                </p>
+                <p>
+                <label for="buitendrade">overige waarnemingen</label>
+                    <input type="text" name="overig">
+                </p>
+                <p>
+                <label for="buitendrade">handtekening</label>
+                    <input type="text" name="handtekening">
+                </p>
+                <p>
+                <label for="buitendrade">aantal bedrijfsuren</label>
+                    <input type="text" name="uren">
+                </p>
+                <p>
+                <label for="buitendrade">reden voor afleggen</label>
+                    <input type="text" name="afleg">
+                </p>
                 <input type="submit" value="Submit">
             </form>
         </div>
