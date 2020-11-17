@@ -5,9 +5,16 @@
         <link rel="stylesheet" href="../css/main.css">
     </head>
     <body>
-        <h1 class="logo">Over de Rhein</h1> 
+        <h1 class="logo">Over de Rhein</h1>  
+        <div class="topnav">
+            <a href="index.php" class="navtext">home</a>
+            <a href="test.php" class="navtext">kabel test</a>
+            <a href="gegevens.php" class="navtext">hijskraan gegevens</a>
+            <a href="keuring.php" class="navtext">hijskraan keuring</a>
+            <a href="registratie.php" class="navtext active">registratie</a>
+        </div>
         <div class="box">
-            <form action="validation.php" method="post">
+            <form action="registervalidation.php" method="post">
                 <label>Gebruikersnaam</label>
                 <input type="text" name="user" required>
                 <label>Wachtwoord</laebl>

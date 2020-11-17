@@ -40,7 +40,7 @@
             <a href="test.php" class="navtext">kabel test</a>
             <a href="gegevens.php" class="navtext">hijskraan gegevens</a>
             <a href="keuring.php" class="navtext">hijskraan keuring</a>
-            <a href="login.php" class="navtext">uitlog</a>
+            <a href="registartie.php" class="navtext">registratie</a>
         </div>
         <div class="kabelbox">
         <?php
@@ -66,6 +66,7 @@
             <label>reden voor afleggen: <?php echo $pd["afleg_reden"] ?></label><br>
         </tabel>
             <?php } ?>
+
         <?php
             $gegevens = getgegevens(); 
             foreach($gegevens as $gs)
@@ -93,6 +94,5 @@
             <label>akkoord nee: <?php echo $gs["nee"] ?></label><br>
         </tabel>
         <?php }?>
-        </div>
     </body>
 </html>
