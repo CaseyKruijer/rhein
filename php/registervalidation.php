@@ -9,18 +9,18 @@ mysqli_select_db($con, 'rhein');
 $name = $_POST['user'];
 $password = $_POST['password'];
 
-$s = "select * from login where gebruiker = '$name' && wachtwoord = '$password'";
+$s = "select * from registreren where username = '$name'";
 
 $result = mysqli_query($con, $s);
 
-$num = myqli_num_rows($result);
+$num = mysqli_num_query($result);
 
 if($num == 1){
-    echo"gebruikers naam is al in gebruik";
+    echo"gebruikersnaam is al bezet";
 }
 else{
-    $reg= "insert into login(`gebruikernaam`, `wachwoord`) values ('$name', '$pass')";
+    $reg="insert into registreren(gebruiker, wachtwoord) values('$name', '$password')";
     mysqli_query($con, $reg);
-    echo"registratie is gelukt";
+    echo"de registratie is gelukt";
 }
 ?>
