@@ -48,7 +48,7 @@
                 </p>
                 <p>
                 <label for="buitendrade">datum</label>
-                    <input type="text" name="datum">
+                    <input type="date" name="datum">
                 </p>
                 <p>
                 <label for="buitendrade">kabel levrancier</label>
