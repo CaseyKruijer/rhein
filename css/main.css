@@ -62,6 +62,16 @@ a{
     border: solid 10px #000;
 }
 
+.index_box{
+    float: left;
+    width: 18vw;
+}
+
+.boxgegevensindex{
+    float: left;
+    width: 18vw;
+}
+
 .testbox{
     border: 10px solid #000;
     border-radius: 20px;

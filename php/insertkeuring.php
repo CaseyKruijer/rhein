@@ -16,7 +16,7 @@ $query= "INSERT INTO kabelchacklist (`draadbreuk.AMEL`)
 VALUES('$a')";
 
 if ($link->query($query) === TRUE) {
-    echo "Inserted into products successfully";
+    echo "Inserted into keuring successfully";
 } else {
     echo "Error inserting into table: " . $link->error;
 }

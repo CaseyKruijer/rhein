@@ -32,7 +32,7 @@ $query= "INSERT INTO hijskraangegevens (`banden`, `stempels`, `rupsen`, `hoofdgi
 VALUES('$a', '$b', '$c', '$d', '$e', '$f', '$g', '$h', '$i', '$j', '$k', '$l', '$m', '$n', '$o', '$p', '$q', '$r')";
 
 if ($link->query($query) === TRUE) {
-    echo "Inserted into products successfully";
+    echo "Inserted into hijskraan gegevens successfully";
 } else {
     echo "Error inserting into table: " . $link->error;
 }

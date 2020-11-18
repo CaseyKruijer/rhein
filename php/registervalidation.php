@@ -9,17 +9,16 @@ mysqli_select_db($con, 'rhein');
 $name = $_POST['user'];
 $password = $_POST['password'];
 
-$s = "select * from registreren where username = '$name'";
+$s = "SELECT * FROM registreren WHERE user = '$name'";
 
 $result = mysqli_query($con, $s);
-
-$num = mysqli_num_query($result);
+$num = mysqli_num_rows($result);
 
 if($num == 1){
     echo"gebruikersnaam is al bezet";
 }
 else{
-    $reg="insert into registreren(gebruiker, wachtwoord) values('$name', '$password')";
+    $reg="INSERT INTO registreren(`user`, `password`) VALUES('$name', '$password')";
     mysqli_query($con, $reg);
     echo"de registratie is gelukt";
 }
