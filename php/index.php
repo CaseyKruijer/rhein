@@ -41,65 +41,62 @@
             <a href="gegevens.php" class="navtext">hijskraan gegevens</a>
             <a href="keuring.php" class="navtext">hijskraan keuring</a>
             <a href="registartie.php" class="navtext">registratie</a>
-            <a href="login.php" class="navtext">logout</a>
+            <a href="logout.php" class="navtext">logout</a>
         </div>
         <div class="kabelbox">
+        <h2>kabel test </h2>
         <?php
-            $products = getproduct(); 
-            foreach($products as $pd)
+            $products = getproduct();
+            foreach(array_slice($products, 0, 5) as $pd)
             {
         ?>
-        <div class="index_box">
-        <h2>kabel test </h2>
-            <tabel>
-                <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL"] ?></label><br>
-                <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL2"] ?></label><br>
-                <label>buiten draden: <?php echo $pd["buitendrade.MVB"] ?></label><br>
-                <label>roest en corrosie: <?php echo $pd["roest.NVB"] ?></label><br>
-                <label>kabel vermindering in diameter: <?php echo $pd["kabelvermindring"] ?></label><br>
-                <label> positie van meetpunt: <?php echo $pd["meetpunt"] ?></label><br>
-                <label>totale beoordeling: <?php echo $pd["totaal.MVB"] ?></label><br>
-                <label>beschadeging en vorming: <?php echo $pd["vervormingen.TYPE"] ?></label><br>
-                <label>datum van de test: <?php echo $pd["datum"] ?></label><br>
-                <label>leverancier van de kabel: <?php echo $pd["kabel_levrancier"] ?></label><br>
-                <label>overige waarnemingen: <?php echo $pd["overig"] ?></label><br>
-                <label>handeteking: <?php echo $pd["handtekening"] ?></label><br>
-                <label>bedrijfs uren: <?php echo $pd["uren"] ?></label><br>
-                <label>reden voor afleggen: <?php echo $pd["afleg_reden"] ?></label><br>
-            </tabel>
-        </div>
-            <?php } ?>
-
-        <div class="kabelbox">
-            <?php
-                $gegevens = getgegevens(); 
-                foreach($gegevens as $gs)
-                {
-            ?>
-            <div class="boxgegevensindex">
-                <h2>hijskraan gegevens </h2>
-                <tabel>
-                    <label>banden: <?php echo $gs["banden"] ?></label><br>
-                    <label>stempels: <?php echo $gs["stempels"] ?></label><br>
-                    <label>rupsen: <?php echo $gs["rupsen"] ?></label><br>
-                    <label>hoofdgiek lengte: <?php echo $gs["hoofdgiek_lengte"] ?></label><br>
-                    <label>mechanische sectie: <?php echo $gs["mechanischesectie"] ?></label><br>
-                    <label>hulpgiek lengte: <?php echo $gs["hulpgiek_lengte"] ?></label><br>
-                    <label>totale giek lengte: <?php echo $gs["gieklengte_hoek"] ?></label><br>
-                    <label>hoofdgiek hoek: <?php echo $gs["hoofdgiek_hoek"] ?></label><br>
-                    <label>hulpgiek: <?php echo $gs["hulpgiek"] ?></label><br>
-                    <label>aantal parten hijskabel: <?php echo $gs["hijskabels"] ?></label><br>
-                    <label>RAVZ: <?php echo $gs["RAZV"] ?></label><br>
-                    <label>eigen massa ballast LMB: <?php echo $gs["EMBLMB"] ?></label><br>
-                    <label>toelaatbare bedrijfslast bij in werken: <?php echo $gs["bedrijfslast"] ?></label><br>
-                    <label>LMB treed in werking bij: <?php echo $gs["LMB"] ?></label><br>
-                    <label>proeflast: <?php echo $gs["proeflast"] ?></label><br>
-                    <label>afwijking in %: <?php echo $gs["afwijking"] ?></label><br>
-                    <label>akkoord ja: <?php echo $gs["ja"] ?></label><br>
-                    <label>akkoord nee: <?php echo $gs["nee"] ?></label><br>
+                <tabel class="left">
+                    <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL"] ?></label><br>
+                    <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL2"] ?></label><br>
+                    <label>buiten draden: <?php echo $pd["buitendrade.MVB"] ?></label><br>
+                    <label>roest en corrosie: <?php echo $pd["roest.NVB"] ?></label><br>
+                    <label>kabel vermindering in diameter: <?php echo $pd["kabelvermindring"] ?></label><br>
+                    <label>positie van meetpunt: <?php echo $pd["meetpunt"] ?></label><br>
+                    <label>totale beoordeling: <?php echo $pd["totaal.MVB"] ?></label><br>
+                    <label>beschadeging en vorming: <?php echo $pd["vervormingen.TYPE"] ?></label><br>
+                    <label>datum van de test: <?php echo $pd["datum"] ?></label><br>
+                    <label>leverancier van de kabel: <?php echo $pd["kabel_levrancier"] ?></label><br>
+                    <label>overige waarnemingen: <?php echo $pd["overig"] ?></label><br>
+                    <label>handeteking: <?php echo $pd["handtekening"] ?></label><br>
+                    <label>bedrijfs uren: <?php echo $pd["uren"] ?></label><br>
+                    <label>reden voor afleggen: <?php echo $pd["afleg_reden"] ?></label><br><br>
                 </tabel>
+            <?php } ?>
             </div>
-            <?php }?>
-        </div>
+
+        <div class="gegevensbox">
+        <h2>hijskraan gegevens </h2>
+        <?php
+            $products = getgegevens();
+            foreach(array_slice($products, 0, 5) as $pd)
+            {
+        ?>
+                <tabel class="left">
+                    <label>banden: <?php echo $pd["banden"] ?></label><br>
+                    <label>stempels: <?php echo $pd["stempels"] ?></label><br>
+                    <label>rupsen: <?php echo $pd["rupsen"] ?></label><br>
+                    <label>hoofdgiek lengte: <?php echo $pd["hoofdgiek_lengte"] ?></label><br>
+                    <label>mechanischesectie: <?php echo $pd["mechanischesectie"] ?></label><br>
+                    <label>hulpgiek lengte: <?php echo $pd["hulpgiek_lengte"] ?></label><br>
+                    <label>totale giek lengte: <?php echo $pd["gieklengte_hoek"] ?></label><br>
+                    <label>hoofdgiek hoek: <?php echo $pd["hoofdgiek_hoek"] ?></label><br>
+                    <label>hulpgiek hoek: <?php echo $pd["hulpgiek"] ?></label><br>
+                    <label>aantal parten hijskabel: <?php echo $pd["hijskabels"] ?></label><br>
+                    <label>RAVZ: <?php echo $pd["RAZV"] ?></label><br>
+                    <label>eigen massa ballast LMB: <?php echo $pd["EMBLMB"] ?></label><br>
+                    <label>toelaatbare bedrijfslast bij inwerking: <?php echo $pd["bedrijfslast"] ?></label><br>
+                    <label>LMB treed in werking bij: <?php echo $pd["LMB"] ?></label><br>
+                    <label>proeflast: <?php echo $pd["proeflast"] ?></label><br>
+                    <label>afwijking in %: <?php echo $pd["afwijking"] ?></label><br>
+                    <label>ja: <?php echo $pd["ja"] ?></label><br>
+                    <label>nee: <?php echo $pd["nee"] ?></label><br>
+                </tabel>
+            <?php } ?>
+            </div>
     </body>
 </html>

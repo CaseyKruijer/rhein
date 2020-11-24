@@ -57,9 +57,16 @@ a{
 }
 
 .kabelbox{
-    width: auto;
-    height: auto;
+    width: 98vw;
+    height: 24vh;
     border: solid 10px #000;
+}
+
+.gegevensbox{
+    width: 98vw;
+    height: 29vh;
+    border: solid 10px #000;
+
 }
 
 .index_box{
@@ -85,4 +92,13 @@ a{
     margin-top: 12%;
     border: 10px solid #000;
     border-radius: 30px;
+}
+
+.left{
+    float: left;
+    padding-left: 1vw;
+}
+
+h2{
+    padding-left: 48vw;
 }

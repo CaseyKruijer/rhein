@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+header('location:registartie.php');
 
 $con = mysqli_connect('localhost:3306', 'root', '');
 
