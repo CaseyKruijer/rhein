@@ -8,7 +8,7 @@ html{
     padding: 0;
 
     width: 100vw;
-    height: 100vh;
+    height: 140vh;
 }
 
 .logo{
@@ -57,14 +57,14 @@ a{
 }
 
 .kabelbox{
-    width: 98vw;
-    height: 24vh;
+    width: 96vw;
+    height: 45vh;
     border: solid 10px #000;
 }
 
 .gegevensbox{
-    width: 98vw;
-    height: 29vh;
+    width: 96vw;
+    height: 55vh;
     border: solid 10px #000;
 
 }

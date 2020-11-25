@@ -1,9 +1,16 @@
 <?php
+if(!isset($_SESSION)){
+    session_start();
+   }
+   if(!isset($_SESSION['user'])){
+    }else{
+        header('location:login.php');
+    }
         function getproduct()
         {
             $serverLink = mysqli_connect("localhost:3306", "root", "", "rhein");
             $ret = array();
-            $product_sql = "SELECT * FROM kabelchacklist";
+            $product_sql = "SELECT * FROM kabelchacklist ORDER BY TABEL_ID DESC LIMIT 5";
             $res = mysqli_query($serverLink, $product_sql);
     
             while($ar = mysqli_fetch_assoc($res))
@@ -17,7 +24,7 @@
         {
             $serverLink = mysqli_connect("localhost:3306", "root", "", "rhein");
             $ret = array();
-            $gegevens_sql = "SELECT * FROM hijskraangegevens";
+            $gegevens_sql = "SELECT * FROM hijskraangegevens ORDER BY TABEL_ID DESC LIMIT 5";
             $res = mysqli_query($serverLink, $gegevens_sql);
     
             while($ar = mysqli_fetch_assoc($res))
@@ -44,12 +51,12 @@
             <a href="logout.php" class="navtext">logout</a>
         </div>
         <div class="kabelbox">
-        <h2>kabel test </h2>
-        <?php
-            $products = getproduct();
-            foreach(array_slice($products, 0, 5) as $pd)
-            {
-        ?>
+            <h2>kabel test </h2>
+            <?php
+                $products = getproduct();
+                foreach($products as $pd)
+                {
+            ?>
                 <tabel class="left">
                     <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL"] ?></label><br>
                     <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL2"] ?></label><br>
@@ -67,13 +74,13 @@
                     <label>reden voor afleggen: <?php echo $pd["afleg_reden"] ?></label><br><br>
                 </tabel>
             <?php } ?>
-            </div>
+        </div>
 
         <div class="gegevensbox">
         <h2>hijskraan gegevens </h2>
         <?php
             $products = getgegevens();
-            foreach(array_slice($products, 0, 5) as $pd)
+            foreach($products as $pd)
             {
         ?>
                 <tabel class="left">
