@@ -1,11 +1,6 @@
 <?php
-if(!isset($_SESSION)){
-    session_start();
-   }
-   if(!isset($_SESSION['user'])){
-    }else{
-        header('location:login.php');
-    }
+include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php");
+
         function getproduct()
         {
             $serverLink = mysqli_connect("localhost:3306", "root", "", "rhein");
@@ -57,7 +52,7 @@ if(!isset($_SESSION)){
                 foreach($products as $pd)
                 {
             ?>
-                <tabel class="left">
+                <tabel>
                     <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL"] ?></label><br>
                     <label>draadbreuk: <?php echo $pd["draadbreuk.AMEL2"] ?></label><br>
                     <label>buiten draden: <?php echo $pd["buitendrade.MVB"] ?></label><br>
@@ -83,7 +78,7 @@ if(!isset($_SESSION)){
             foreach($products as $pd)
             {
         ?>
-                <tabel class="left">
+                <tabel>
                     <label>banden: <?php echo $pd["banden"] ?></label><br>
                     <label>stempels: <?php echo $pd["stempels"] ?></label><br>
                     <label>rupsen: <?php echo $pd["rupsen"] ?></label><br>
@@ -101,7 +96,7 @@ if(!isset($_SESSION)){
                     <label>proeflast: <?php echo $pd["proeflast"] ?></label><br>
                     <label>afwijking in %: <?php echo $pd["afwijking"] ?></label><br>
                     <label>ja: <?php echo $pd["ja"] ?></label><br>
-                    <label>nee: <?php echo $pd["nee"] ?></label><br>
+                    <label>nee: <?php echo $pd["nee"] ?></label><br><br>
                 </tabel>
             <?php } ?>
             </div>

@@ -1,3 +1,6 @@
+<?php
+   include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php");
+?>
 <!DOCTYPE html>
 <html>
     <head>

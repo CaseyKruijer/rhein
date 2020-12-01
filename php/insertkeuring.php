@@ -1,4 +1,5 @@
 <?php
+include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php");
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 $link = mysqli_connect("localhost", "root", "", "rhein");

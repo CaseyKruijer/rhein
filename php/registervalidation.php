@@ -1,5 +1,7 @@
 <?php
 
+include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php");
+
 session_start();
 header('location:registartie.php');
 

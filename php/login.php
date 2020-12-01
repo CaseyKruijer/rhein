@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,12 +7,13 @@ session_start();
     <body>
         <h1 class="logo">Over de Rhein</h1> 
         <div class="box">
-            <form action="validation.php" method="post">
+            <form action="validation.php" method="post" class="login">
                 <label>Gebruikersnaam</label>
                 <input type="text" name="user" required>
                 <label>Wachtwoord</laebl>
-                <input type="password" name="password" required>
-                <button type="submit">login</button>
+                <input type="password" name="password" required><br>
+                <radio>
+                <button type="submit" class="loginbtn">login</button>
             </form>
         </div>
     </body>

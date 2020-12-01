@@ -1,3 +1,4 @@
+<?php include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,13 +14,13 @@
             <a href="keuring.php" class="navtext">hijskraan keuring</a>
             <a href="registratie.php" class="navtext active">registratie</a>
         </div>
-        <div class="box">
+        <div class="loginbox">
             <form action="registervalidation.php" method="post">
                 <label>Gebruikersnaam</label>
                 <input type="text" name="user" required>
                 <label>Wachtwoord</laebl>
                 <input type="password" name="password" required>
-                <button type="submit">login</button>
+                <button type="submit" class="registreerbtn">registreer</button>
             </form>
         </div>
     </body>
