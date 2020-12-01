@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 25 nov 2020 om 12:04
--- Serverversie: 10.1.37-MariaDB
--- PHP-versie: 5.6.40
+-- Gegenereerd op: 01 dec 2020 om 11:25
+-- Serverversie: 10.4.14-MariaDB
+-- PHP-versie: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -48,7 +47,7 @@ CREATE TABLE `hijskraangegevens` (
   `afwijking` int(100) DEFAULT NULL,
   `ja` varchar(225) DEFAULT NULL,
   `nee` varchar(25) DEFAULT NULL,
-  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `TIMESTAMP` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -76,11 +75,11 @@ CREATE TABLE `kabelchacklist` (
   `vervormingen.TYPE` varchar(25) DEFAULT NULL,
   `datum` date DEFAULT NULL,
   `kabel_levrancier` varchar(25) DEFAULT NULL,
-  `overig` text,
+  `overig` text DEFAULT NULL,
   `handtekening` varchar(25) DEFAULT NULL,
   `uren` time DEFAULT NULL,
-  `afleg_reden` text,
-  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `afleg_reden` text DEFAULT NULL,
+  `TIMESTAMP` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -89,7 +88,8 @@ CREATE TABLE `kabelchacklist` (
 
 INSERT INTO `kabelchacklist` (`TABEL_ID`, `draadbreuk.AMEL`, `draadbreuk.AMEL2`, `buitendrade.MVB`, `roest.NVB`, `kabelvermindring`, `meetpunt`, `totaal.MVB`, `vervormingen.TYPE`, `datum`, `kabel_levrancier`, `overig`, `handtekening`, `uren`, `afleg_reden`, `TIMESTAMP`) VALUES
 (44, 1, 2, 0, 4, '5', '6', 7, '8', '2020-11-24', '9', '10', '11', '00:00:12', '14', '2020-11-24 00:44:34'),
-(45, 5, 4, 8, 10, '16', '19', 20, '90', '2020-11-28', '80', '100', '70', '00:00:04', '3', '2020-11-25 10:45:48');
+(45, 5, 4, 8, 10, '16', '19', 20, '90', '2020-11-28', '80', '100', '70', '00:00:04', '3', '2020-11-25 10:45:48'),
+(46, 2, 1, 3, 7, '9', '5', 6, '3', '2020-11-29', '9', '0', '1', '00:00:06', '9', '2020-11-29 18:26:02');
 
 -- --------------------------------------------------------
 
@@ -101,15 +101,17 @@ CREATE TABLE `registreren` (
   `USER_ID` int(255) NOT NULL,
   `user` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
-  `CURRENTTIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `role` varchar(50) NOT NULL,
+  `CURRENTTIME` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `registreren`
 --
 
-INSERT INTO `registreren` (`USER_ID`, `user`, `password`, `CURRENTTIME`) VALUES
-(1, 'admin', 'admin', '2020-11-18 09:29:09');
+INSERT INTO `registreren` (`USER_ID`, `user`, `password`, `role`, `CURRENTTIME`) VALUES
+(1, 'admin', 'admin', 'admin', '2020-11-18 09:29:09'),
+(2, 'test', 'test', 'tester', '2020-11-30 15:34:16');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -147,13 +149,13 @@ ALTER TABLE `hijskraangegevens`
 -- AUTO_INCREMENT voor een tabel `kabelchacklist`
 --
 ALTER TABLE `kabelchacklist`
-  MODIFY `TABEL_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `TABEL_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT voor een tabel `registreren`
 --
 ALTER TABLE `registreren`
-  MODIFY `USER_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `USER_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
