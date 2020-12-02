@@ -10,8 +10,9 @@ $serverLink = mysqli_connect($host, $username, $password, $db1);
 
 $username = mysqli_real_escape_string($serverLink, $_POST['user']);
 $password = mysqli_real_escape_string($serverLink, $_POST['password']);
+$role = mysqli_real_escape_string($serverLink, $_POST['userrole']);
 
-$select = mysqli_query($serverLink, "SELECT * FROM `registreren` WHERE `user` = '$username' AND `password` = '$password'") or exit(mysqli_error($serverLink));
+$select = mysqli_query($serverLink, "SELECT * FROM `registreren` WHERE `user` = '$username' AND `password` = '$password'  AND `role` = '$role'") or exit(mysqli_error($serverLink));
 if(mysqli_num_rows($select) == 0) {
     array_push($errors, "UsNotFound");
     echo("Username not found!");
@@ -19,6 +20,7 @@ if(mysqli_num_rows($select) == 0) {
 
 if (count($errors) == 0) {
     $_SESSION['username'] = $username;
+    $_SESSION['userrole'] = $role;
     header('location: index.php '); //NAAR USER INTERFACE!
 } else {
     header('location: login.php');

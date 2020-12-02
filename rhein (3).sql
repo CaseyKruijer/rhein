@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 01 dec 2020 om 11:25
--- Serverversie: 10.4.14-MariaDB
--- PHP-versie: 7.4.9
+-- Gegenereerd op: 02 dec 2020 om 12:08
+-- Serverversie: 10.1.37-MariaDB
+-- PHP-versie: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -47,7 +48,7 @@ CREATE TABLE `hijskraangegevens` (
   `afwijking` int(100) DEFAULT NULL,
   `ja` varchar(225) DEFAULT NULL,
   `nee` varchar(25) DEFAULT NULL,
-  `TIMESTAMP` datetime NOT NULL DEFAULT current_timestamp()
+  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -75,11 +76,11 @@ CREATE TABLE `kabelchacklist` (
   `vervormingen.TYPE` varchar(25) DEFAULT NULL,
   `datum` date DEFAULT NULL,
   `kabel_levrancier` varchar(25) DEFAULT NULL,
-  `overig` text DEFAULT NULL,
+  `overig` text,
   `handtekening` varchar(25) DEFAULT NULL,
   `uren` time DEFAULT NULL,
-  `afleg_reden` text DEFAULT NULL,
-  `TIMESTAMP` datetime NOT NULL DEFAULT current_timestamp()
+  `afleg_reden` text,
+  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -102,7 +103,7 @@ CREATE TABLE `registreren` (
   `user` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `role` varchar(50) NOT NULL,
-  `CURRENTTIME` timestamp NOT NULL DEFAULT current_timestamp()
+  `CURRENTTIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -155,7 +156,7 @@ ALTER TABLE `kabelchacklist`
 -- AUTO_INCREMENT voor een tabel `registreren`
 --
 ALTER TABLE `registreren`
-  MODIFY `USER_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `USER_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

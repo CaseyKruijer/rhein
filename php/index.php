@@ -42,7 +42,11 @@ include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php");
             <a href="test.php" class="navtext">kabel test</a>
             <a href="gegevens.php" class="navtext">hijskraan gegevens</a>
             <a href="keuring.php" class="navtext">hijskraan keuring</a>
+            <?php
+            if($_SESSION['userrole'] == 'admin'){?>
+
             <a href="registartie.php" class="navtext">registratie</a>
+            <?php } ?>
             <a href="logout.php" class="navtext">logout</a>
         </div>
         <div class="kabelbox">

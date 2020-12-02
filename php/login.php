@@ -12,7 +12,8 @@
                 <input type="text" name="user" required>
                 <label>Wachtwoord</laebl>
                 <input type="password" name="password" required><br>
-                <radio>
+                <input type="radio" name="userrole" value="admin" required>admin
+                <input type="radio" name="userrole" value="tester" required>tester
                 <button type="submit" class="loginbtn">login</button>
             </form>
         </div>

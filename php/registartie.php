@@ -1,4 +1,10 @@
-<?php include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php"); ?>
+<?php include($_SERVER['DOCUMENT_ROOT']."/rhein/php/bin/session.php"); 
+
+if($_SESSION['userrole'] != 'admin'){
+    header('location:index.php');
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,6 +26,8 @@
                 <input type="text" name="user" required>
                 <label>Wachtwoord</laebl>
                 <input type="password" name="password" required>
+                <input type="radio" name="userrole" value="admin" required>admin
+                <input type="radio" name="userrole" value="tester" required>tester
                 <button type="submit" class="registreerbtn">registreer</button>
             </form>
         </div>

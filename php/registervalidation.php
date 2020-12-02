@@ -11,6 +11,7 @@ mysqli_select_db($con, 'rhein');
 
 $name = $_POST['user'];
 $password = $_POST['password'];
+$role = $_POST['userrole'];
 
 $s = "SELECT * FROM registreren WHERE user = '$name'";
 
@@ -21,7 +22,7 @@ if($num == 1){
     echo"gebruikersnaam is al bezet";
 }
 else{
-    $reg="INSERT INTO registreren(`user`, `password`) VALUES('$name', '$password')";
+    $reg="INSERT INTO registreren(`user`, `password`, `role`) VALUES('$name', '$password', '$role')";
     mysqli_query($con, $reg);
     echo"de registratie is gelukt";
 }
