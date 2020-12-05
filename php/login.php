@@ -14,7 +14,11 @@
                 <input type="password" name="password" required><br>
                 <input type="radio" name="userrole" value="admin" required>admin
                 <input type="radio" name="userrole" value="tester" required>tester
-                <button type="submit" class="loginbtn">login</button>
+                <button type="submit" class="loginbtn">login</button> <br> 
+                <?php if(isset($_GET['error'])){
+						echo "Er is een fout in uw username of wachtwoorrd of role is fout";
+						}
+						?>
             </form>
         </div>
     </body>

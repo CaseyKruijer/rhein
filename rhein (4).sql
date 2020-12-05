@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 dec 2020 om 12:08
--- Serverversie: 10.1.37-MariaDB
--- PHP-versie: 5.6.40
+-- Gegenereerd op: 05 dec 2020 om 20:21
+-- Serverversie: 10.4.14-MariaDB
+-- PHP-versie: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -48,7 +47,7 @@ CREATE TABLE `hijskraangegevens` (
   `afwijking` int(100) DEFAULT NULL,
   `ja` varchar(225) DEFAULT NULL,
   `nee` varchar(25) DEFAULT NULL,
-  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `TIMESTAMP` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -76,11 +75,11 @@ CREATE TABLE `kabelchacklist` (
   `vervormingen.TYPE` varchar(25) DEFAULT NULL,
   `datum` date DEFAULT NULL,
   `kabel_levrancier` varchar(25) DEFAULT NULL,
-  `overig` text,
+  `overig` text DEFAULT NULL,
   `handtekening` varchar(25) DEFAULT NULL,
   `uren` time DEFAULT NULL,
-  `afleg_reden` text,
-  `TIMESTAMP` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `afleg_reden` text DEFAULT NULL,
+  `TIMESTAMP` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -100,19 +99,19 @@ INSERT INTO `kabelchacklist` (`TABEL_ID`, `draadbreuk.AMEL`, `draadbreuk.AMEL2`,
 
 CREATE TABLE `registreren` (
   `USER_ID` int(255) NOT NULL,
-  `user` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
-  `role` varchar(50) NOT NULL,
-  `CURRENTTIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `role` varchar(50) DEFAULT NULL,
+  `CURRENTIME` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `registreren`
 --
 
-INSERT INTO `registreren` (`USER_ID`, `user`, `password`, `role`, `CURRENTTIME`) VALUES
-(1, 'admin', 'admin', 'admin', '2020-11-18 09:29:09'),
-(2, 'test', 'test', 'tester', '2020-11-30 15:34:16');
+INSERT INTO `registreren` (`USER_ID`, `user`, `password`, `role`, `CURRENTIME`) VALUES
+(7, 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', '2020-12-05 20:19:53'),
+(8, 'test', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', 'tester', '2020-12-05 20:20:07');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -156,7 +155,7 @@ ALTER TABLE `kabelchacklist`
 -- AUTO_INCREMENT voor een tabel `registreren`
 --
 ALTER TABLE `registreren`
-  MODIFY `USER_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `USER_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
